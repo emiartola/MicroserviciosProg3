@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.formacionbdi.microservicios.app.usuarios.models.entity.alumno.java&apos; to &apos;Alumno.java&apos;&#x0D;&#x0A;- Original project: &apos;microservicios-usuarios&apos;&#x0D;&#x0A;- Original element: &apos;com.formacionbdi.microservicios.app.usuarios.models.entity.alumno.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.formacionbdi.microservicios.app.usuarios.models.entity.Alumno.java&apos;" description="Rename compilation unit &apos;alumno.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.formacionbdi.microservicios.app.usuarios.models.entity{alumno.java" name="Alumno.java" references="false" stamp="1612367320037" version="1.0"/>
+</session>
