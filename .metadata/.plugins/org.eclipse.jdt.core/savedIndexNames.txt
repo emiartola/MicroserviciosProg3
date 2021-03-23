@@ -93,6 +93,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2238125346.index
 646436966.index
 2812923585.index
+1307554359.index
 408659795.index
 1055019822.index
 3399445607.index
@@ -101,6 +102,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2154742784.index
 2845807539.index
 957342762.index
+198338518.index
 1167745897.index
 3134691293.index
 2543849727.index
@@ -131,7 +133,9 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 3572716771.index
 1380235922.index
 4203967361.index
+706500617.index
 70618301.index
+4281183166.index
 2821165719.index
 468770388.index
 1506790208.index
@@ -190,6 +194,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 122104595.index
 165794779.index
 2608282496.index
+2458818303.index
 1689506402.index
 2659542005.index
 1491297764.index
@@ -198,6 +203,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2301247747.index
 2166540646.index
 2805521834.index
+3111310007.index
 1225931399.index
 3403682024.index
 3485069695.index
@@ -214,6 +220,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 1729078464.index
 1377168155.index
 2772419465.index
+949045315.index
 1244485673.index
 2768625280.index
 2704534705.index
@@ -234,6 +241,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2218710089.index
 4153156769.index
 2170316486.index
+1361452029.index
 696757174.index
 1612623477.index
 1332010365.index
@@ -243,6 +251,7 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2194909650.index
 2106744821.index
 3324161534.index
+296544707.index
 314711740.index
 2833880794.index
 203777094.index
@@ -250,11 +259,12 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 2904639125.index
 3191816150.index
 411355307.index
+2540796014.index
 672210971.index
 901171414.index
-4069293921.index
-3439455441.index
 2237697362.index
+3439455441.index
+4069293921.index
 4134687121.index
 1541891372.index
 4227966299.index
@@ -264,3 +274,4 @@ INDEX VERSION 1.131+C:\Users\Emi\Documents\Emi\UTN\3er Semestre\Programación3\Cu
 3775512048.index
 4260590846.index
 1642876357.index
+2934167646.index

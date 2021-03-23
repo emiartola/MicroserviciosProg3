@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="com.formacionbdi.microservicios.app.usuarios.models.repository.AlumnoRepository"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.formacionbdi.microservicios.app.usuarios.services.AlumnoService"/>
@@ -29,4 +28,9 @@
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.zuul.EnableZuulProxy"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+<fullyQualifiedTypeName name="com.formacionbdi.microservicios.commons.services.CommonServiceImpl"/>
+<fullyQualifiedTypeName name="com.formacionbdi.microservicios.app.usuarios.models.repository.AlumnoRepository"/>
+<fullyQualifiedTypeName name="com.formacionbdi.microservicios.commons.services.CommonService"/>
+<fullyQualifiedTypeName name="com.formacionbdi.microservicios.commons.controllers.CommonController"/>
 </qualifiedTypeNameHistroy>
