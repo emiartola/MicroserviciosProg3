@@ -11,22 +11,21 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
 @Entity
-@Table(name="preguntas")
+@Table(name = "preguntas")
 public class Pregunta {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String texto;
 
-	@JsonIgnoreProperties(value = {"preguntas"})
+	@JsonIgnoreProperties(value = { "preguntas" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "examen_id")
 	private Examen examen;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -53,18 +52,14 @@ public class Pregunta {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this==obj) {
+		if (this == obj) {
 			return true;
 		}
 		if (!(obj instanceof Pregunta)) {
 			return false;
 		}
 		Pregunta a = (Pregunta) obj;
-			return this.id != null && this.id.equals(a.getId());
-		}
+		return this.id != null && this.id.equals(a.getId());
 	}
 
-
-	
-	
-
+}

@@ -29,6 +29,9 @@ import com.formacionbdi.microservicios.commons.controllers.CommonController;
 @RestController
 public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
+	@Autowired
+	private AlumnoService service;
+	
 	@GetMapping("/uploads/img/{id}")
 	public ResponseEntity<?> verFoto (@PathVariable Long id){
 		Optional<Alumno> o =service.findById(id);
@@ -39,8 +42,6 @@ public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
 	}
 	
-	@Autowired
-		private AlumnoService service;
 
 	@PutMapping("/{id}")
 	public ResponseEntity<?> editar(@Valid @RequestBody Alumno alumno, @PathVariable Long id, BindingResult result) {

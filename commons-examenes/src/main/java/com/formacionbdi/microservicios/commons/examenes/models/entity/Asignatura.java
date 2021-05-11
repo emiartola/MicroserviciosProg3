@@ -24,6 +24,7 @@ public class Asignatura {
 	private Long id;
 	private String nombre;
 	
+	
 	@JsonIgnoreProperties (value = {"hijos"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Asignatura padre;
@@ -51,7 +52,22 @@ public class Asignatura {
 	public Asignatura() {
 		this.hijos = new ArrayList<>();
 	}
+
+	public Asignatura getPadre() {
+		return padre;
+	}
+
+	public void setPadre(Asignatura padre) {
+		this.padre = padre;
+	}
+
+	public List<Asignatura> getHijos() {
+		return hijos;
+	}
+
+	public void setHijos(List<Asignatura> hijos) {
+		this.hijos = hijos;
+	}
 	
-
-
+	
 }
