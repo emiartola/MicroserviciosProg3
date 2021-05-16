@@ -37,6 +37,10 @@ public class Pregunta {
 	public String getTexto() {
 		return texto;
 	}
+	
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
 
 	public Examen getExamen() {
 		return examen;
@@ -46,9 +50,7 @@ public class Pregunta {
 		this.examen = examen;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
+
 
 	@Override
 	public boolean equals(Object obj) {
