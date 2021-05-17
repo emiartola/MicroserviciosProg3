@@ -1,8 +1,8 @@
 package com.formacionbdi.microservicios.app.usuarios.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
-
 
 import javax.validation.Valid;
 
@@ -31,17 +31,21 @@ public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
 	@Autowired
 	private AlumnoService service;
-	
+
+	@GetMapping("/alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids) {
+		return ResponseEntity.ok(service.findAllById(ids));
+	}
+
 	@GetMapping("/uploads/img/{id}")
-	public ResponseEntity<?> verFoto (@PathVariable Long id){
-		Optional<Alumno> o =service.findById(id);
-		if (o == null ||o.get().getFoto() == null) {
+	public ResponseEntity<?> verFoto(@PathVariable Long id) {
+		Optional<Alumno> o = service.findById(id);
+		if (o == null || o.get().getFoto() == null) {
 			return ResponseEntity.notFound().build();
 		}
 		Resource imagen = new ByteArrayResource(o.get().getFoto());
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
 	}
-	
 
 	@PutMapping("/{id}")
 	public ResponseEntity<?> editar(@Valid @RequestBody Alumno alumno, @PathVariable Long id, BindingResult result) {
@@ -54,7 +58,7 @@ public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 		if (o == null) {
 			return ResponseEntity.notFound().build();
 		}
-		
+
 		Alumno alumnoDb = o.get();
 		alumnoDb.setNombre(alumno.getNombre());
 		alumnoDb.setApellido(alumno.getApellido());
