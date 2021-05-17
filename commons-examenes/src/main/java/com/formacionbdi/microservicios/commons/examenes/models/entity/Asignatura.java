@@ -22,24 +22,20 @@ public class Asignatura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	public Asignatura(Long id, String nombre, Asignatura padre, List<Asignatura> hijos) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.padre = padre;
-		this.hijos = hijos;
-	}
 
 	private String nombre;
 
-	@JsonIgnoreProperties(value = { "hijos", "handler", "hibernateLazyInitializer" })
+	@JsonIgnoreProperties(value = { "hijos", "handler", "hibernateLazyInitializer"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Asignatura padre;
 
-	@JsonIgnoreProperties(value = { "padre", "handler", "hibernateLazyInitializer" }, allowSetters = true)
+	@JsonIgnoreProperties(value = { "padre", "handler", "hibernateLazyInitializer"}, allowSetters = true)
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "padre", cascade = CascadeType.ALL)
 	private List<Asignatura> hijos;
+
+	public Asignatura() {
+		this.hijos = new ArrayList<>();
+	}
 
 	public Long getId() {
 		return id;
@@ -55,10 +51,6 @@ public class Asignatura {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public Asignatura() {
-		this.hijos = new ArrayList<>();
 	}
 
 	public Asignatura getPadre() {
