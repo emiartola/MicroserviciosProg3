@@ -19,8 +19,8 @@ import com.formacionbdi.microservicios.commons.examenes.models.entity.Pregunta;
 public class ExamenController extends CommonController<Examen, ExamenService> {
 
 	@GetMapping("/respondidos-por-preguntas")
-	public ResponseEntity<?> obtenerExamenesIdsPorPreguntasIdRespondidas(@RequestParam List<Long> preguntasIds) {
-		return ResponseEntity.ok().body(service.findExamenesIdsConRespuestasByPreguntasIds(preguntasIds));
+	public ResponseEntity<?> obtenerExamenesIdsPorPreguntasIdRespondidas(@RequestParam List<Long> preguntaIds) {
+		return ResponseEntity.ok().body(service.findExamenesIdsConRespuestasByPreguntaIds(preguntaIds));
 	}
 
 	@PutMapping("/{id}")

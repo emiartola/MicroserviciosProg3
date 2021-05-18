@@ -23,7 +23,7 @@ public class CursoAlumno {
 	@Column(name = "alumno_id", unique = true)
 	private Long alumnoId;
 
-	@JsonIgnoreProperties(value = { "cursoAlumnos" })
+	@JsonIgnoreProperties(value = { "cursoAlumnos", "handler", "hibernateLazyInitializer" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "curso_id")
 	private Curso curso;

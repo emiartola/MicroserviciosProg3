@@ -39,11 +39,11 @@ public class CursoController extends CommonController<Curso, CursoService> {
 	private String balanceadorTest;
 
 	@DeleteMapping("/eliminar-alumno/{id}")
-	public ResponseEntity<?> eliminarCursoAlumnoPorId(@PathVariable Long id){
+	public ResponseEntity<?> eliminarCursoAlumnoPorId(@PathVariable Long id) {
 		service.eliminarCursoAlumnoPorId(id);
 		return ResponseEntity.noContent().build();
 	}
-	
+
 	@GetMapping
 	@Override
 	public ResponseEntity<?> listar() {
@@ -57,16 +57,16 @@ public class CursoController extends CommonController<Curso, CursoService> {
 		}).collect(Collectors.toList());
 		return ResponseEntity.ok().body(cursos);
 	}
-	
+
 	@GetMapping("/pagina")
 	@Override
-	public ResponseEntity<?> listar(Pageable pageable){
-		Page<Curso> cursos =service.findAll(pageable).map(curso -> {
-			curso.getCursoAlumnos().forEach(ca ->{
-			Alumno alumno = new Alumno();
-			alumno.setId(ca.getAlumnoId());
-			curso.addAlumno(alumno);
-		});
+	public ResponseEntity<?> listar(Pageable pageable) {
+		Page<Curso> cursos = service.findAll(pageable).map(curso -> {
+			curso.getCursoAlumnos().forEach(ca -> {
+				Alumno alumno = new Alumno();
+				alumno.setId(ca.getAlumnoId());
+				curso.addAlumno(alumno);
+			});
 			return curso;
 		});
 		return ResponseEntity.ok().body(cursos);
@@ -150,14 +150,15 @@ public class CursoController extends CommonController<Curso, CursoService> {
 
 		if (curso != null) {
 			List<Long> examenesIds = (List<Long>) service.obtenerExamenesIdsConRespuestasAlumno(id);
-
-			List<Examen> examenes = curso.getExamenes().stream().map(examen -> {
-				if (examenesIds.contains(examen.getId())) {
-					examen.setRespondido(true);
-				}
-				return examen;
-			}).collect(Collectors.toList());
-			curso.setExamenes(examenes);
+			if (examenesIds != null && examenesIds.size() > 0) {
+				List<Examen> examenes = curso.getExamenes().stream().map(examen -> {
+					if (examenesIds.contains(examen.getId())) {
+						examen.setRespondido(true);
+					}
+					return examen;
+				}).collect(Collectors.toList());
+				curso.setExamenes(examenes);
+			}
 		}
 		return ResponseEntity.ok(curso);
 	}

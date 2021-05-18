@@ -56,7 +56,7 @@ public class Curso {
 	}
 
 	public void setAlumnos(List<Alumno> alumnos) {
-		this.alumnos = alumnos;
+		this.alumnos = alumnos; 
 	}
 
 	@PrePersist
