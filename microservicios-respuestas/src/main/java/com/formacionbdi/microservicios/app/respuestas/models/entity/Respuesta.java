@@ -1,7 +1,6 @@
 package com.formacionbdi.microservicios.app.respuestas.models.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.formacionbdi.microservicios.commons.alumnos.models.entity.Alumno;
@@ -15,12 +14,12 @@ public class Respuesta {
 
 	private String texto;
 
-	@Transient
+	//@Transient
 	private Alumno alumno;
 
 	private Long alumnoId;
 	
-	@Transient
+	//@Transient
 	private Pregunta pregunta;
 	
 	private Long preguntaId;
