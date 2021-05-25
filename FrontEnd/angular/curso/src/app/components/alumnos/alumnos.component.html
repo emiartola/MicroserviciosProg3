@@ -38,5 +38,12 @@
                     </tr>
                 </TBody>
         </table>
+      <mat-paginator [length]="totalRegistros"
+            [pageSize]="totalPorPagina"
+            [pageIndex]= "paginaActual"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)= "paginar($event)">
+        </mat-paginator>
+        
     </div>
 </div>
