@@ -11,6 +11,7 @@
                 <THead>
                     <tr>
                         <th>id</th>
+                        <th>foto</th>
                         <th>nombre</th>
                         <th>apellido</th>
                         <th>email</th>
@@ -23,6 +24,17 @@
                     <tr *ngFor="let alumno of lista">
                         <!––para repetir por cada alumno-->
                             <td>{{alumno.id}}</td>
+                            <td>
+                                <img *ngIf= "alumno.fotoHashCode"
+                                 [src]="baseEndpoint + '/uploads/img/' + alumno.id + '?alumno.fotoHashCode'"
+                                class = "img-thumbnail rounded"
+                                style="width: 64px; cursor: pointer;">
+
+                                <img *ngIf= "!alumno.fotoHashCode"
+                                [src]= "'/assets/images/no-usuario.png'"
+                                class = "img-thumbnail rounded"
+                                style="width: 64px; cursor: pointer;" >
+                            </td>
                             <td>{{alumno.nombre }}</td>
                             <td>{{alumno.apellido}}</td>
                             <td>{{alumno.email}}</td>
@@ -46,6 +58,5 @@
             showFirstLastButtons
             class= "float-left mx-2">
         </mat-paginator>
-        
     </div>
 </div>
