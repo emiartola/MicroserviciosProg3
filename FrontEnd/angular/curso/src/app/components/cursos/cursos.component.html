@@ -1,1 +1,41 @@
-<p>cursos works!</p>
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/cursos/form"> crear </button>
+        <div class="alert alert-info" *ngIf="(lista?.length ?? -1) == 0">
+            No hay cursos en el sistema.
+        </div>
+        <table class="table table-hover table-striped" *ngIf="(lista?.length ?? -1) > 0">
+            <!–– hover para posicionarse por sobre la fila con el mouse, y striped para intercalar color entre cada
+                fila-->
+                <THead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Fecha de creación</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </THead>
+                <Tbody>
+                    <tr *ngFor= "let curso of lista">
+                        <!––para repetir por cada curso-->
+                            <td>{{curso.id}}</td>
+                            <td>{{curso.nombre}}</td>
+                            <td>{{curso.createAt | date: 'dd-MM-yyyy'}}</td>
+                            <td><button class="btn btn-secondary btn-sm" 
+                                [routerLink]="['/cursos/form', curso.id]">
+                                    editar
+                            </button></td>
+                            <td><button class="btn btn-danger btn-sm" 
+                                (click)="eliminar(curso)">
+                                    eliminar
+                                </button></td>
+                    </tr>
+                </Tbody>
+        </table>
+        <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual"
+            [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+        </mat-paginator>
+    </div>
+</div>
