@@ -9,7 +9,7 @@ import { CommonService } from './common.service';
 })
 export class CursoService extends CommonService<Curso> {
 
-   baseEndpoint = BASE_ENDPOINT + '/cursos';
+  protected baseEndpoint = BASE_ENDPOINT + '/cursos';
 
   constructor(http: HttpClient) {
     super(http);

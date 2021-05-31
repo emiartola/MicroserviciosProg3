@@ -1,7 +1,7 @@
 <div class="card bg-light mb-3">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body">
-        <button class="btn btn-primary my-2" routerLink="/cursos/form"> crear </button>
+        <button class="btn btn-primary my-2" routerLink="/cursos/form"> Crear </button>
         <div class="alert alert-info" *ngIf="(lista?.length ?? -1) == 0">
             No hay cursos en el sistema.
         </div>
@@ -25,11 +25,11 @@
                             <td>{{curso.createAt | date: 'dd-MM-yyyy'}}</td>
                             <td><button class="btn btn-secondary btn-sm" 
                                 [routerLink]="['/cursos/form', curso.id]">
-                                    editar
+                                    Editar
                             </button></td>
                             <td><button class="btn btn-danger btn-sm" 
                                 (click)="eliminar(curso)">
-                                    eliminar
+                                    Eliminar
                                 </button></td>
                     </tr>
                 </Tbody>
