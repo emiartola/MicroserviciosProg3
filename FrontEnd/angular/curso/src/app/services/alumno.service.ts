@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { Alumno } from '../models/alumno';
 import { CommonService } from './common.service';
-import {BASE_ENDPOINT} from '../config/app';
+import { BASE_ENDPOINT } from '../config/app';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class AlumnoService extends CommonService<Alumno>{
     super(http);
   }
 
-  public crearConFoto(alumno: Alumno, archivo: File): Observable <Alumno>{
+  public crearConFoto(alumno: Alumno, archivo: File): Observable<Alumno> {
     const formData = new FormData();
     formData.append('archivo', archivo);
     formData.append('nombre', alumno.nombre);
@@ -25,7 +25,7 @@ export class AlumnoService extends CommonService<Alumno>{
     return this.http.post<Alumno>(this.baseEndpoint + '/crear-con-foto', formData);
   }
 
-  public editarConFoto(alumno: Alumno, archivo: File): Observable <Alumno>{
+  public editarConFoto(alumno: Alumno, archivo: File): Observable<Alumno> {
     const formData = new FormData();
     formData.append('archivo', archivo);
     formData.append('nombre', alumno.nombre);
@@ -33,5 +33,11 @@ export class AlumnoService extends CommonService<Alumno>{
     formData.append('email', alumno.email);
     return this.http.put<Alumno>(`${this.baseEndpoint}/editar-con-foto/${alumno.id}`, formData);
   }
+
+  public filtrarPorNombre(nombre: string): Observable<Alumno[]> {
+    return this.http.get<Alumno[]>(`${this.baseEndpoint}/filtrar/${nombre}`);
+  }
+
+
 
 }
