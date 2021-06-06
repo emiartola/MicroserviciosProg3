@@ -44,21 +44,21 @@ public class Examen {
 	@OneToMany(mappedBy = "examen", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Pregunta> preguntas;
 
-	@JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@NotNull
-	private Asignatura asignatura;
-
 	/*@JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	//@NotNull
+	@NotNull
+	private Asignatura asignatura;*/
+
+	@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@NotNull
 	private Asignatura asignaturaPadre;
 
-	@JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer" })
+	@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	//@NotNull
+	@NotNull
 	private Asignatura asignaturaHija;
-*/
+	
 	@Transient
 	private boolean respondido;
 
@@ -114,15 +114,15 @@ public class Examen {
 		pregunta.setExamen(null);
 	}
 
-	public Asignatura getAsignatura() {
+	/*public Asignatura getAsignatura() {
 		return asignatura;
 	}
 
 	public void setAsignatura(Asignatura asignatura) {
 		this.asignatura = asignatura;
-	}
+	}*/
 
-	/*public Asignatura getAsignaturaPadre() {
+	public Asignatura getAsignaturaPadre() {
 		return asignaturaPadre;
 	}
 
@@ -136,7 +136,7 @@ public class Examen {
 
 	public void setAsignaturaHija(Asignatura asignaturaHija) {
 		this.asignaturaHija = asignaturaHija;
-	}*/
+	}
 
 	public boolean isRespondido() {
 		return respondido;
