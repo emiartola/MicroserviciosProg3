@@ -1,0 +1,62 @@
+<mat-card>
+    <mat-card-header *ngIf="curso">
+        <mat-card-title>
+            Examenes del curso {{curso.nombre}}
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content >
+        <table mat-table [dataSource]="examenes" class="mat-elevation-z8 m=3 " style="width: 80%;">
+
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let examen"> {{examen.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let examen"> {{examen.nombre}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Asignaturas">
+                <th mat-header-cell *matHeaderCellDef> Asignaturas </th>
+                <td mat-cell *matCellDef="let examen"> {{examen.asignaturaPadre.nombre}} ->
+                    {{examen.asignaturaHija.nombre}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Preguntas">
+                <th mat-header-cell *matHeaderCellDef> Preguntas </th>
+                <td mat-cell *matCellDef="let examen">
+                    {{examen.preguntas.length}}
+                </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="Responder">
+                <th mat-header-cell *matHeaderCellDef> Responder </th>
+                <td mat-cell *matCellDef="let examen">
+                    <button mat-stroked-button color="warn" [disabled]= "examen.respondido"
+                    (click)= "responderExamen(examen)"> 
+                        {{examen.respondido? 'Respondido': 'Responder'}}
+                    </button> 
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Ver">
+                <th mat-header-cell *matHeaderCellDef> Ver </th>
+                <td mat-cell *matCellDef="let examen">
+                    <button mat-stroked-button color="primary" [disabled]= "!examen.respondido"> 
+                        Ver
+                    </button> 
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="mostrarColumnasExamenes"></tr>
+            <tr mat-row *matRowDef="let examen; columns: mostrarColumnasExamenes;">
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons class="float-left m-3">
+        </mat-paginator>
+
+    </mat-card-content>
+</mat-card>

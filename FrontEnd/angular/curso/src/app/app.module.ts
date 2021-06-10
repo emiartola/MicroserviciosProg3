@@ -19,9 +19,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { AsignarAlumnosComponent } from './components/cursos/asignar-alumnos.component'; 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.component';
+import { ResponderExamenComponent } from './components/alumnos/responder-examen.component';
+import { ResponderExamenModalComponent } from './components/alumnos/responder-examen-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -33,8 +38,11 @@ import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.c
     CursosFormComponent,
     ExamenFormComponent,
     AsignarAlumnosComponent,
-    AsignarExamenesComponent
+    AsignarExamenesComponent,
+    ResponderExamenComponent,
+    ResponderExamenModalComponent
   ],
+  entryComponents: [ResponderExamenModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -49,8 +57,10 @@ import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.c
     MatButtonModule,
     MatCardModule,
     MatTabsModule,
+    MatDialogModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
