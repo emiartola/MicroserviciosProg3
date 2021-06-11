@@ -44,7 +44,8 @@
             <ng-container matColumnDef="Ver">
                 <th mat-header-cell *matHeaderCellDef> Ver </th>
                 <td mat-cell *matCellDef="let examen">
-                    <button mat-stroked-button color="primary" [disabled]= "!examen.respondido"> 
+                    <button mat-stroked-button color="primary" [disabled]= "!examen.respondido"
+                    (click)= "verExamen(examen)"> 
                         Ver
                     </button> 
                 </td>
