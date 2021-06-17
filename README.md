@@ -4,7 +4,7 @@ Se realizó a partir de la arquitectura de microservicios.
 
 Principales tecnologías y herramientas utilizadas:
 
-Backend: Spring Boot en el entorno de desarrollo Spring Tools Suite 4 para Eclipse y Maven y como Lenguaje Java 15
+Backend: Spring Boot en el entorno de desarrollo Spring Tools Suite 4 para Eclipse, Maven y como Lenguaje Java 15
 Bases de datos: 
     MariaDB (Microservicios cursos y examenes)
     PostgreSQL (Microservicio usuarios)
