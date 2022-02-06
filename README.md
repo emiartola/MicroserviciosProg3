@@ -1,6 +1,4 @@
-Proyecto realizado para cátedra de Programación 3 de la Tecnicatura Superior en Programación - UTN.
-
-Se realizó a partir de la arquitectura de microservicios.
+Proyecto realizado a partir de la arquitectura de microservicios.
 
 Principales tecnologías y herramientas utilizadas:
 
